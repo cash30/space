@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxc8g73siv2xj"]
+
+[ext_resource type="Script" uid="uid://bf7hmj3ashcyh" path="res://Scripts/UI/buttons/play.gd" id="1_2aywq"]
+[ext_resource type="Script" uid="uid://y0v7a5ovv5so" path="res://Scripts/UI/buttons/toWarning.gd" id="2_468b1"]
+[ext_resource type="Script" uid="uid://cwr35gxrn7gpt" path="res://Scripts/UI/buttons/settingsButton.gd" id="2_gdg20"]
+[ext_resource type="Script" uid="uid://n1flfm6vnvo" path="res://Scenes/UI/how.gd" id="3_o0rgc"]
+
+[sub_resource type="Theme" id="Theme_yqatu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.34781694, 0.34781697, 0.3478169, 1)
+
+[node name="play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023000002
+anchor_top = 0.185
+anchor_right = 0.48200002
+anchor_bottom = 0.39000002
+offset_left = 0.5039978
+offset_top = 0.11999512
+offset_right = -0.2640381
+offset_bottom = 0.27998352
+theme = SubResource("Theme_yqatu")
+theme_override_font_sizes/font_size = 91
+text = "Play"
+script = ExtResource("1_2aywq")
+
+[node name="infinite" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51000005
+anchor_top = 0.19100001
+anchor_right = 0.96800005
+anchor_bottom = 0.39000002
+offset_left = -0.52008057
+offset_top = -3.768013
+offset_right = -0.1361084
+offset_bottom = 0.27998352
+theme = SubResource("Theme_yqatu")
+theme_override_font_sizes/font_size = 91
+text = "Play infinite"
+script = ExtResource("2_468b1")
+
+[node name="settings" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023000002
+anchor_top = 0.596
+anchor_right = 0.48200002
+anchor_bottom = 0.80100006
+offset_left = 0.5039978
+offset_top = -0.20800781
+offset_right = -0.2640381
+offset_bottom = -0.048034668
+theme = SubResource("Theme_yqatu")
+theme_override_font_sizes/font_size = 91
+text = "Settings"
+script = ExtResource("2_gdg20")
+
+[node name="how" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51000005
+anchor_top = 0.597
+anchor_right = 0.96800005
+anchor_bottom = 0.80200005
+offset_left = -0.52008057
+offset_top = 0.14401245
+offset_right = -0.1361084
+offset_bottom = 0.30395508
+theme = SubResource("Theme_yqatu")
+theme_override_font_sizes/font_size = 91
+text = "???"
+script = ExtResource("3_o0rgc")
+
+[connection signal="pressed" from="play" to="play" method="_on_pressed"]
+[connection signal="pressed" from="infinite" to="play" method="_on_infinite_pressed"]
+[connection signal="pressed" from="infinite" to="infinite" method="_on_pressed"]
+[connection signal="pressed" from="settings" to="settings" method="_on_pressed"]
+[connection signal="pressed" from="how" to="how" method="_on_pressed"]

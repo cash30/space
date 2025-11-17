@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3ir376df04gd"]
+
+[ext_resource type="Script" uid="uid://bqf8gn3g6jn35" path="res://Scripts/UI/main.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://cnvijauhbwbn8" path="res://Scenes/meteor/meteor.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bxuapdulnub04" path="res://Scenes/player/player.tscn" id="3_8gbba"]
+[ext_resource type="AudioStream" uid="uid://dm0qceyc31ann" path="res://Music/Main music.mp3" id="4_jjvhh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8gbba"]
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_jjgbg")
+meteor = ExtResource("2_bo1nx")
+
+[node name="player" parent="." instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5627117, 1.829412, 16.504545)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0016755613, 0.99999857, 0, -0.99999857, 0.0016755613, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_8gbba")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.057337638, -0.9983548, 0, 0.9983548, -0.057337638, 0, 0, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jjvhh")
+autoplay = true

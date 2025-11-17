@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnvijauhbwbn8"]
+
+[ext_resource type="Script" uid="uid://c8t6877ydxcou" path="res://Scripts/meteor.gd" id="1_hwoh2"]
+[ext_resource type="Texture2D" uid="uid://dw7j4xek7w5n1" path="res://3d Models/toy-rocket-4k-free-3d-model/source/Toy Rocket Sketchfab_2.png" id="2_sfhl7"]
+[ext_resource type="Script" uid="uid://4e5j6548utb0" path="res://Scripts/meteor/easy.gd" id="3_faao5"]
+[ext_resource type="Script" uid="uid://beo3vbpk0xfc1" path="res://Scripts/meteor/fancy.gd" id="5_pyl6a"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3ysmo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_b0b36"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfoi5"]
+albedo_texture = ExtResource("2_sfhl7")
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_hwoh2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_3ysmo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_b0b36")
+surface_material_override/0 = SubResource("StandardMaterial3D_lfoi5")
+script = ExtResource("3_faao5")
+
+[node name="Obj" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.57, 0, 0, 0, 0.57, 0, 0, 0, 0.57, 0, 0, 0)
+script = ExtResource("5_pyl6a")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2o16stx1krol"]
+
+[ext_resource type="Script" uid="uid://clyu62n6vgm4t" path="res://Scripts/UI/buttons/mainMenu.gd" id="1_b6vlb"]
+[ext_resource type="AudioStream" uid="uid://cs10pd3blkiv" path="res://Music/trumpet.mp3" id="2_ut70g"]
+
+[node name="win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47007585, 0.47007585, 0.47007585, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.42400002
+offset_bottom = 0.24798584
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 140
+text = "				YOU WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024
+anchor_top = 0.42400002
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -27.648
+offset_top = 0.24798584
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "Good Job!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39200002
+anchor_top = 0.625
+anchor_right = 0.597
+anchor_bottom = 0.758
+offset_left = 0.4159851
+offset_right = 0.25598145
+offset_bottom = -0.184021
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Main Menu"
+script = ExtResource("1_b6vlb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ut70g")
+pitch_scale = 1.33
+autoplay = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7w43s34nee2k"]
+
+[ext_resource type="Texture2D" uid="uid://cvlgunt077d0h" path="res://Art/back.png" id="1_qlti7"]
+[ext_resource type="Script" uid="uid://clyu62n6vgm4t" path="res://Scripts/UI/buttons/mainMenu.gd" id="2_o0f71"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.38000003
+anchor_right = 1.0
+anchor_bottom = 0.73300004
+offset_top = -0.24002075
+offset_bottom = 0.015960693
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "WASD to move the spaceship up, down, left and right.
+Avoid the Space granades, otherwise you'll die
+
+Thanks for reading the how page! now you know what to do"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.29900002
+offset_bottom = 4.247986
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "How To Play:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012
+anchor_top = 0.014
+anchor_right = 0.171
+anchor_bottom = 0.123
+offset_left = 0.17599964
+offset_top = -0.0720005
+offset_right = 0.0079956055
+offset_bottom = -2.7040024
+theme_override_font_sizes/font_size = 40
+text = "Menu"
+icon = ExtResource("1_qlti7")
+script = ExtResource("2_o0f71")
+
+[connection signal="pressed" from="Menu button" to="Menu button" method="_on_pressed"]

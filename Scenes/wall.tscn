@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6t3p724xsatu"]
+
+[ext_resource type="Texture2D" uid="uid://c6cib2e82cr21" path="res://Art/spaceAndfinishLine.png" id="1_d155t"]
+[ext_resource type="Texture2D" uid="uid://dr1grmo4tic6r" path="res://Art/finishLine.png" id="2_yjehn"]
+[ext_resource type="Script" uid="uid://braqk044tytms" path="res://Scenes/UI/finishLine.gd" id="3_m8ojb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b57mv"]
+size = Vector3(12.539459, 2.175476, 0.05999756)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(32.134434, 0, 0, 0, 21.729895, 0, 0, 0, 14.119052, 5.4367466, -0.029601693, 0)
+texture_filter = 0
+texture = ExtResource("1_d155t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3336773, -0.036247253, -0.01687622)
+shape = SubResource("BoxShape3D_b57mv")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-1.3113416e-06, 0, 30, 0, 10, 0, -30, 0, -1.3113416e-06, 11.813749, 0, 4.7596564)
+texture_filter = 0
+render_priority = -1
+texture = ExtResource("2_yjehn")
+script = ExtResource("3_m8ojb")
+
+[node name="corner" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.86278, 0, 0)

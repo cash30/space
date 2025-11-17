@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://1qqyxfdpllpr"]
+
+[ext_resource type="Texture2D" uid="uid://cvlgunt077d0h" path="res://Art/back.png" id="1_owiy1"]
+[ext_resource type="Script" uid="uid://co5334ecpbkmo" path="res://Scenes/UI/menu_button.gd" id="1_p46qs"]
+[ext_resource type="Script" uid="uid://clyu62n6vgm4t" path="res://Scripts/UI/buttons/mainMenu.gd" id="2_ma1v7"]
+
+[sub_resource type="Theme" id="Theme_8b3at"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.35906908, 0.35906908, 0.35906908, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 430.0
+offset_top = 156.0
+offset_right = -458.0
+offset_bottom = -454.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.28118682, 0.28118688, 0.28118682, 1)
+
+[node name="MenuButton" type="MenuButton" parent="."]
+z_index = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.24100001
+anchor_right = 0.563
+anchor_bottom = 0.29900002
+offset_left = -0.53601074
+offset_top = -0.16801453
+offset_right = 0.4239502
+offset_bottom = 0.24798584
+theme = SubResource("Theme_8b3at")
+text = "Graphics"
+icon_alignment = 1
+script = ExtResource("1_p46qs")
+
+[node name="Menu button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012
+anchor_top = 0.014
+anchor_right = 0.171
+anchor_bottom = 0.123
+offset_left = 0.17599964
+offset_top = -0.0720005
+offset_right = 0.0079956055
+offset_bottom = -2.7040024
+theme_override_font_sizes/font_size = 40
+text = "Menu"
+icon = ExtResource("1_owiy1")
+script = ExtResource("2_ma1v7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.623
+anchor_right = 0.83400005
+anchor_bottom = 0.80600005
+offset_left = 13.0
+offset_top = -187.70401
+offset_right = 13.231934
+offset_bottom = -188.28802
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Yeah so i was doing stuff to fix the infinite mode and broke this too. Sorry y'all"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Menu button" to="Menu button" method="_on_pressed"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bopkj8quf48yg"]
+
+[ext_resource type="PackedScene" uid="uid://b2gpgxjt5q2mm" path="res://3d Models/toy-rocket-4k-free-3d-model/source/Toy Rocket Sketchfab.fbx" id="1_q5sgr"]
+[ext_resource type="Script" uid="uid://fhqtfpuhns1q" path="res://Scenes/player/player_model.gd" id="1_tkg4k"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_tkg4k")
+
+[node name="Toy Rocket Sketchfab" parent="." instance=ExtResource("1_q5sgr")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1, 0, 0)
